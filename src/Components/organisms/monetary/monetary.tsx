@@ -34,22 +34,23 @@ const monetaryValues = [
     }
   ];
 
-const MonetarySection = () => {
-  return (
-    
-    <Grid
-    templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)']}
-    gap={4}
-    width="full"
-    p={4}
-  >
-    {monetaryValues.map((info) => (
-      <GridItem key={info.title}>
-        <InfoCards amount={info.amount} icon={info.icon} percentage={info.percentage} title={info.title} />
-      </GridItem>
-    ))}
-  </Grid>
-  )
-}
-
-export default MonetarySection
+  const MonetarySection = () => {
+    return (
+      <Grid
+        templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)']}
+        gap={4}
+        width={['full', '100%']}
+        maxWidth={['full', '1200px']}
+        margin="auto"
+        p={1}
+      >
+        {monetaryValues.map((info) => (
+          <GridItem key={info.title}>
+            <InfoCards amount={info.amount} icon={info.icon} percentage={info.percentage} title={info.title} />
+          </GridItem>
+        ))}
+      </Grid>
+    );
+  };
+  
+  export default MonetarySection;
