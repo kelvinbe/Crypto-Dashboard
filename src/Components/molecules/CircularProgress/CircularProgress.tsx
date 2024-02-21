@@ -24,7 +24,7 @@ const CircularProgress = (props: ICircularProgress) => {
       const interval = setInterval(() => {
         const newProgress = Math.floor(Math.random() * 100);
         setProgress(newProgress);
-      }, 3000); // Change the value every 3 seconds
+      }, 3000);
 
       return () => clearInterval(interval);
     }
