@@ -10,6 +10,9 @@ interface IInfoCard {
 
 const InfoCards = (props: IInfoCard) => {
   const { title, amount, icon, percentage } = props;
+  const percentageColor = percentage[0] === '+' ? '#00FF00' : '#FF0000';
+
+
 
   return (
     <Card bgColor={'#0B0C24'} width={['full', '450px']} margin='auto'>
@@ -19,7 +22,7 @@ const InfoCards = (props: IInfoCard) => {
             <Text fontSize={12} color={'#555c85'}>{title}</Text>
             <Box display={'flex'} flexDirection={'row'} color={'#FFFFFF'}>
               {amount}
-              <Text paddingTop={1.5} fontSize={11} paddingLeft={1} color={``}>
+              <Text  color={percentageColor} paddingTop={1.5} fontSize={11} paddingLeft={1}>
               {percentage}
               </Text>
             </Box>
