@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { ChakraProvider, Flex, Box, Grid, GridItem } from '@chakra-ui/react'
 import MonetarySection from "@/Components/organisms/monetary/monetary";
 import WelcomeSection from "@/Components/molecules/welcomeSection/WelcomeSection";
+import SatisfactionSection from "@/Components/organisms/SatisfactionSection/SatisfactionSection";
 
 
 const App = () => {
@@ -10,6 +10,7 @@ const App = () => {
     <Flex flexDirection={'column'}>
       <MonetarySection />
       <WelcomeSection />
+      <SatisfactionSection />
     </Flex>
   )
   
