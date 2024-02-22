@@ -17,7 +17,7 @@ const InfoCards = (props: IInfoCard) => {
   return (
     <Card bgColor={'#0B0C24'} width={['full', '450px']} margin='auto'>
       <CardBody>
-        <Flex justifyContent={'space-between'} flexDirection={['column', 'row']} alignItems={['start', 'center']} width='full'>
+        <Flex justifyContent={'space-between'} flexDirection={['row']} alignItems={['start', 'center']} width='full'>
           <Box flexDirection={['column']} order={[1, 2]}>
             <Text fontSize={12} color={'#555c85'}>{title}</Text>
             <Box display={'flex'} flexDirection={'row'} color={'#FFFFFF'}>

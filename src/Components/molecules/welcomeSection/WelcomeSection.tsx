@@ -1,14 +1,19 @@
-import React from 'react'
-import WelcomeCard from '@/Components/atoms/cards/welcomeCard'
-import { Box, Flex, Text } from '@chakra-ui/react';
-
+import React from 'react';
+import WelcomeCard from '@/Components/atoms/cards/welcomeCard';
+import { Grid } from '@chakra-ui/react';
 
 const WelcomeSection = () => {
-  return (
-    <Box m={10}>
-        <WelcomeCard name='Beno Kinyanjui' />
-    </Box>
-  )
-}
+    return (
+        <Grid
+            templateColumns={{ base: '1fr', md: '9  fr 1fr' }} // One column on small screens, two columns on medium screens
+            gap={4} // Add spacing between cards
+            justifyContent="center" // Center the cards horizontally
+            alignItems="center" // Center the cards vertically
+            m={10}
+        >
+            <WelcomeCard name="Beno Kinyanjui" />
+        </Grid>
+    );
+};
 
-export default WelcomeSection
+export default WelcomeSection;

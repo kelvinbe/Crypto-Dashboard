@@ -38,7 +38,17 @@ class LineChart extends Component<ILineChart> {
         },
         legend: {
           show: this.props.legend // Hide the legend
-        }
+        },
+        responsive: [
+          {
+            breakpoint: 768,
+            options: {
+              chart: {
+                width: '100%'
+              }
+            }
+          }
+        ]
       },
       series: [
         {
@@ -62,7 +72,7 @@ class LineChart extends Component<ILineChart> {
               options={this.state.options}
               series={this.state.series}
               type={this.props.type}
-              width="500"
+              width="100%"
             />
           </div>
         </div>

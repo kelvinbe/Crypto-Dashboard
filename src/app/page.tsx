@@ -6,7 +6,7 @@ import ChartsSection from '@/Components/organisms/chartsSection/ChartsSection';
 const App = () => {
 
   return (
-    <Flex flexDirection={'column'}>
+    <Flex flexDirection={'column'} p={5}>
       <MonetarySection />
       <WelcomeSection />
       <SatisfactionSection />

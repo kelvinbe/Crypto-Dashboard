@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box, Flex, Text } from '@chakra-ui/react';
-import CircularProgresss from '@/Components/molecules/CircularProgress/CircularProgress';
+import React from "react";
+import { Box, Flex, Text, Grid, GridItem } from "@chakra-ui/react";
+import CircularProgresss from "@/Components/molecules/CircularProgress/CircularProgress";
 
 const ReferalCard = () => {
   return (
@@ -21,19 +21,31 @@ const ReferalCard = () => {
       borderStyle="solid"
       borderColor="rgba(0, 0, 0, 0.125)"
       borderRadius="1.25rem"
-      width={600}
+      width={{ base: "100%", md: "500px" }} // Responsive width
       background="linear-gradient(127.09deg, rgb(12 20 68 / 94%) 19.41%, rgb(107 118 175 / 49%) 76.65%)"
       m={5}
     >
-      <Flex flexDirection={'column'}>
-        <Box>
-            <Text fontSize={30} fontWeight={'Bold'} color={'white'}>Satisfaction Rate</Text>
-            <Text fontSize={13} color={'#a5a3a3'}>From all projects</Text>
-        </Box>
-        <Box display={'flex'} justifyContent={'center'}>
-            <CircularProgresss autoChangeProgress={true} showImage={true} color='#3E64FF'  />
-        </Box>
-      </Flex>
+      <Grid templateColumns={{ base: "1fr", md: "1fr" }} gap={4}>
+        <GridItem>
+          <Box>
+            <Text fontSize={30} fontWeight="bold" color="white">
+              Satisfaction Rate
+            </Text>
+            <Text fontSize={13} color="#a5a3a3">
+              From all projects
+            </Text>
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box display="flex" justifyContent="center">
+            <CircularProgresss
+              autoChangeProgress={true}
+              showImage={true}
+              color="#3E64FF"
+            />
+          </Box>
+        </GridItem>
+      </Grid>
     </Box>
   );
 };

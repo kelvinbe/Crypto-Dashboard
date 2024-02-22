@@ -1,7 +1,7 @@
-import React from 'react';
-import { Box, Flex, Text } from '@chakra-ui/react';
-import CircularProgresss from '@/Components/molecules/CircularProgress/CircularProgress';
-import MiniInfoCards from './miniInfoCards';
+import React from "react";
+import { Box, Text, Grid, GridItem } from "@chakra-ui/react";
+import CircularProgresss from "@/Components/molecules/CircularProgress/CircularProgress";
+import MiniInfoCards from "./miniInfoCards";
 
 const SatisfactionCard = () => {
   return (
@@ -14,7 +14,7 @@ const SatisfactionCard = () => {
       minWidth="0px"
       overflowWrap="break-word"
       boxShadow="rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem"
-      height="340px"
+      height={{ base: "auto", md: "370px" }}
       transition="box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms"
       overflow="hidden"
       padding="22px"
@@ -22,32 +22,38 @@ const SatisfactionCard = () => {
       borderStyle="solid"
       borderColor="rgba(0, 0, 0, 0.125)"
       borderRadius="1.25rem"
-      width={600}
+      width={{ base: "100%", md: "500px" }}
       background="linear-gradient(127.09deg, rgb(12 20 68 / 94%) 19.41%, rgb(107 118 175 / 49%) 76.65%)"
       m={5}
-    
-
-
-
     >
-      <Flex flexDirection={'row'} justifyContent={'center'} alignItems={'center'}>
-        <Box display={'flex'} justifyContent={'center'} flexDirection={'column'}>
+      <Grid templateColumns={{ base: "1fr", md: "2fr 1fr" }} gap={4}>
+        <GridItem>
+          <Box display="flex" flexDirection="column">
             <Box>
-            <Text fontSize={30} fontWeight={'Bold'} color={'white'}>Referral Tracking</Text>
+              <Text fontSize={30} fontWeight="bold" color="white">
+                Referral Tracking
+              </Text>
             </Box>
-            <Box >
-            <Box m={3}>
-            <MiniInfoCards title='Invited' people='145people'/>
+            <Box>
+              <Box margin={3}>
+                <MiniInfoCards title="Invited" people="145 people" />
+              </Box>
+              <Box margin={3}>
+                <MiniInfoCards title="Bonus" people="1,465" />
+              </Box>
             </Box>
-            <Box m={3}>
-            <MiniInfoCards title='Bonus' people='1,465'/>
-            </Box>
-            </Box>
-        </Box>
-        <Box display={'flex'} justifyContent={'center'}>
-            <CircularProgresss color='green' autoChangeProgress={false} showImage={false}/>
-        </Box>
-      </Flex>
+          </Box>
+        </GridItem>
+        <GridItem>
+          <Box display="flex" justifyContent="center" alignItems={"center"}>
+            <CircularProgresss
+              color="green"
+              autoChangeProgress={false}
+              showImage={false}
+            />
+          </Box>
+        </GridItem>
+      </Grid>
     </Box>
   );
 };
