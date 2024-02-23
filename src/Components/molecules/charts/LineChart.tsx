@@ -1,90 +1,68 @@
-'use client'
-import React from "react";
-import dynamic from 'next/dynamic';
+import * as React from 'react';
+import { Doughnut, Line } from 'react-chartjs-2';
+import 'chart.js/auto';
+import { Grid, GridItem } from '@chakra-ui/react';
 
-
-
-
-interface ILineChartProps {
-  type: string;
-  legend: boolean;
-  seriesAName: string;
-  seriesBName: string;
-}
-
-const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
-
-
-
-const LineChart: React.FC<ILineChartProps> = (props) => {
-  if (typeof window === 'undefined') return null; // Don't render on the server-side
-
-
-
-
-
-  const options = {
-    chart: {
-      id: "basic-bar",
-    },
-    xaxis: {
-      categories: [
-        "January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-      ],
-      labels: {
-        style: {
-          colors: "#ffffff"
-        }
-      }
-    },
-    yaxis: {
-      labels: {
-        style: {
-          colors: "#ffffff"
-        }
-      }
-    },
-    legend: {
-      show: props.legend // Hide the legend
-    },
-    responsive: [
+export default function ChartsOverviewDemo() {
+  const doughnutData = {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [
       {
-        breakpoint: 768,
-        options: {
-          chart: {
-            width: '100%'
-          }
-        }
-      }
-    ]
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ],
+        borderWidth: 1,
+      },
+    ],
   };
 
-  const series = [
-    {
-      name: props.seriesAName,
-      data: [30, 40, 45, 50, 49, 60, 70, 91, 80, 70, 60, 50]
-    },
-    {
-      name: props.seriesBName,
-      data: [20, 35, 40, 55, 60, 65, 70, 75, 70, 65, 55, 45]
-    }
-  ];
+  const lineData = {
+    labels: ['Jun', 'Jul', 'Aug'],
+    datasets: [
+      {
+        label: '',
+        data: [5, 6, 7],
+      },
+      {
+        label: '',
+        data: [3, 2, 1],
+      },
+    ],
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
 
   return (
-    <div className="app">
-      <div className="row">
-        <div className="mixed-chart">
-          <Chart
-            options={options}
-            series={series}
-            type={props.type}
-            width="100%"
-          />
-        </div>
-      </div>
-    </div>
+    <Grid
+      templateColumns="1fr 1fr"
+      gap="20px"
+      width="100%"
+      margin="0 auto"
+    >
+      <GridItem>
+        {/* <Doughnut data={doughnutData} options={options} /> */}
+      </GridItem>
+      <GridItem>
+        <Line data={lineData} options={options} />
+      </GridItem>
+    </Grid>
   );
-};
-
-export default LineChart;
+}

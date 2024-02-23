@@ -38,7 +38,7 @@ const ChartCard = (props: IChartCard) => {
                 </Text>
             </Box>
             <Box marginTop={-3}>
-                <LineChart seriesAName='Etherium' seriesBName='Bitcoin' legend={true} type={'line'} />
+                <LineChart   />
             </Box>
         </Grid>
     );
