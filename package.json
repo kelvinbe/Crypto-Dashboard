@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@ramonak/react-progress-bar": "^5.2.0",
     "apexcharts": "^3.46.0",
+    "gravatar": "^1.8.2",
     "next": "14.1.0",
     "react": "^18",
     "react-apexcharts": "^1.4.1",

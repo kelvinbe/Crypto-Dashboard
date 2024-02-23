@@ -40,7 +40,7 @@ const monetaryValues = [
         templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)']}
         gap={4}
         width={['full', '100%']}
-        maxWidth={['full', '1200px']}
+        maxWidth={['full']}
         margin="auto"
         p={1}
       >
