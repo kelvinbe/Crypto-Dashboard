@@ -1,3 +1,5 @@
+'use client'
+
 import React, { ReactNode } from "react";
 import { Box, Text, Flex, Grid, GridItem } from "@chakra-ui/react";
 import LineChart from "@/Components/molecules/charts/LineChart";

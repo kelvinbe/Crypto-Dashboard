@@ -1,6 +1,8 @@
 'use client'
-import React, { useEffect, useState } from "react";
-import Chart from "react-apexcharts";
+import React from "react";
+import dynamic from 'next/dynamic';
+
+
 
 
 interface ILineChartProps {
@@ -10,14 +12,16 @@ interface ILineChartProps {
   seriesBName: string;
 }
 
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+
+
+
 const LineChart: React.FC<ILineChartProps> = (props) => {
-  const [isClient, setIsClient] = useState(false);
+  if (typeof window === 'undefined') return null; // Don't render on the server-side
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
 
-  if (!isClient) return null; // Render nothing on the server
+
+
 
   const options = {
     chart: {
