@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Card, CardBody, Text, Box, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { Card, CardBody, Text, Flex, Grid, GridItem } from '@chakra-ui/react';
 
 interface IInfoCard {
   title: string;
@@ -15,7 +15,13 @@ const InfoCards = (props: IInfoCard) => {
   return (
     <Card bgColor="#0B0C24" width="100%" margin="auto">
       <CardBody>
-        <Grid templateColumns={['1fr', '1fr auto']} gap={['2', '4']} alignItems="center">
+        <Grid
+          templateColumns={['1fr', '1fr auto']}
+          gap={['2', '4']}
+          alignItems="center"
+          display={['flex', 'grid']}
+          justifyContent={['space-between', '']}
+        >
           <GridItem textAlign={['center', 'left']} marginBottom={['2', '0']}>
             <Text fontSize={12} color="#555c85">
               {title}

@@ -30,6 +30,7 @@ const ChartCard = (props: IChartCard) => {
             borderStyle="solid"
             borderColor="rgba(0, 0, 0, 0.125)"
             padding="4px"
+            height={'320px'}
         >
             <Box display={'flex'} flexDirection={'column'} justifyContent={'center'}>
                 <Text fontSize={16} color={'white'}>Sales Overview</Text>
