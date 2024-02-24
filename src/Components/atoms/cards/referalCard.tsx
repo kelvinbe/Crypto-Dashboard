@@ -37,7 +37,7 @@ const ReferalCard = () => {
           </Box>
         </GridItem>
         <GridItem>
-          <Box display="flex" justifyContent="center">
+          <Box display="flex" justifyContent="center" alignItems={'center'}>
             <CircularProgresss
               autoChangeProgress={true}
               showImage={true}

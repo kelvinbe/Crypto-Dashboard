@@ -45,7 +45,7 @@ const SatisfactionCard = () => {
           </Box>
         </GridItem>
         <GridItem>
-          <Box display="flex" justifyContent="center" alignItems={"center"}>
+          <Box display="flex" justifyContent="center" alignItems={"center"}  marginTop={{ base: 0, lg: 20 }}>
             <CircularProgresss
               color="green"
               autoChangeProgress={false}
