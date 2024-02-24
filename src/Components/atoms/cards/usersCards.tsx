@@ -15,7 +15,7 @@ const UsersCard = (props: IUSerCard) => {
   const { icon, title, progress, numbers } = props;
 
   return (
-    <Box borderRadius="md" p={1} m={1} textAlign="center" marginTop={-70}>
+    <Box borderRadius="md" p={1} m={1} textAlign="center">
       <Flex direction="column" alignItems="center">
         <Flex justifyContent={"center"} alignItems={"center"}>
           <span

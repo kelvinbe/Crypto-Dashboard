@@ -58,6 +58,8 @@ const ActiveUsersCard = (props: IChartCard) => {
       </Flex>
       <Box marginTop={-5} marginBottom={5}>
         <LineChart
+          line={true}
+          doughnut={false}
           seriesAName="Users"
           seriesBName="Non-Users"
           legend={false}

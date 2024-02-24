@@ -1,9 +1,21 @@
 import * as React from 'react';
 import { Doughnut, Line } from 'react-chartjs-2';
 import 'chart.js/auto';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem, Box, useMediaQuery } from '@chakra-ui/react';
 
-export default function ChartsOverviewDemo() {
+
+
+interface IProps {
+  line: boolean;
+  doughnut: boolean
+}
+
+
+
+export default function ChartsOverviewDemo(props: IProps) {
+
+  const {line, doughnut} = props
+
   const doughnutData = {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [
@@ -50,19 +62,18 @@ export default function ChartsOverviewDemo() {
     maintainAspectRatio: false,
   };
 
+  const [isSmallScreen] = useMediaQuery('(max-width: 480px)');
+
   return (
-    <Grid
-      templateColumns="1fr 1fr"
-      gap="20px"
-      width="100%"
-      margin="0 auto"
-    >
-      <GridItem>
-        {/* <Doughnut data={doughnutData} options={options} /> */}
-      </GridItem>
-      <GridItem>
-        <Line data={lineData} options={options} />
-      </GridItem>
-    </Grid>
+    <Box overflowX="auto" width={isSmallScreen ? '320px' : '100%'} maxWidth="100%" minWidth="320px">
+      <Grid templateColumns="0fr 1fr" gap="20px" width="100%" margin="0 auto">
+        <GridItem>
+          {doughnut && <Doughnut data={doughnutData} options={options} />}
+        </GridItem>
+        <GridItem>
+         {line && <Line data={lineData} options={options} /> }
+        </GridItem>
+      </Grid>
+    </Box>
   );
 }

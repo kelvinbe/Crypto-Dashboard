@@ -29,7 +29,7 @@ const ChartCard = (props: IChartCard) => {
             borderWidth="0px"
             borderStyle="solid"
             borderColor="rgba(0, 0, 0, 0.125)"
-            padding="22px"
+            padding="4px"
         >
             <Box display={'flex'} flexDirection={'column'} justifyContent={'center'}>
                 <Text fontSize={16} color={'white'}>Sales Overview</Text>
@@ -38,7 +38,7 @@ const ChartCard = (props: IChartCard) => {
                 </Text>
             </Box>
             <Box marginTop={-3}>
-                <LineChart   />
+                <LineChart line={false} doughnut={true}   />
             </Box>
         </Grid>
     );
