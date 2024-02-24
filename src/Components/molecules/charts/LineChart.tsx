@@ -47,15 +47,22 @@ export default function ChartsOverviewDemo(props: IProps) {
     labels: ['Jun', 'Jul', 'Aug'],
     datasets: [
       {
-        label: '',
+        label: 'Dataset 1',
         data: [5, 6, 7],
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+        borderColor: 'rgba(255, 99, 132, 1)',
+        borderWidth: 1,
       },
       {
-        label: '',
+        label: 'Dataset 2',
         data: [3, 2, 1],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1,
       },
     ],
   };
+  
 
   const options = {
     responsive: true,

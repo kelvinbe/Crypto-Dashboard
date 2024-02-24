@@ -1,4 +1,4 @@
-import { ChakraProvider, Flex, Box, Grid, GridItem } from '@chakra-ui/react'
+import { ChakraProvider, Flex, Box, Grid, GridItem,Text } from '@chakra-ui/react'
 import MonetarySection from "@/Components/organisms/monetary/monetary";
 import WelcomeSection from "@/Components/molecules/welcomeSection/WelcomeSection";
 import SatisfactionSection from "@/Components/organisms/SatisfactionSection/SatisfactionSection";
@@ -11,6 +11,7 @@ const App = () => {
 
   return (
     <Flex flexDirection={'column'} p={5}>
+      <h1><span>Crypto</span></h1>
       <MonetarySection />
       <WelcomeSection />
       <SatisfactionSection />
