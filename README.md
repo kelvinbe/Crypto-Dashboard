@@ -1,5 +1,5 @@
 # Project Name
-Next.js Dashboard with ReactCharts
+Crypto Dashboards
 
 ## Overview
 
