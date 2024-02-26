@@ -17,7 +17,7 @@ const ChartCard = (props: IChartCard) => {
             templateColumns="1fr"
             gap={6}
             m={5}
-            width={{ base: '100%', md: '500px' }} // Responsive width
+            width={{ md: '500px' }} // Responsive width
             borderRadius="1.25rem"
             boxShadow="rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem"
             background="linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgb(53 75 189 / 49%) 76.65%)"
