@@ -11,7 +11,7 @@ const WelcomeSection = () => {
             alignItems="center" // Center the cards vertically
             m={10}
         >
-            <WelcomeCard name="Beno Kinyanjui" />
+            <WelcomeCard name="Sir/Madam" />
         </Grid>
     );
 };

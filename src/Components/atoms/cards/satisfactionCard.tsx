@@ -1,9 +1,26 @@
-import React from "react";
+'use client'
+import React, { useState, useEffect } from "react";
 import { Box, Text, Grid, GridItem } from "@chakra-ui/react";
 import CircularProgresss from "@/Components/molecules/CircularProgress/CircularProgress";
 import MiniInfoCards from "./miniInfoCards";
 
 const SatisfactionCard = () => {
+  const [invited, setInvited] = useState("145 people");
+  const [bonus, setBonus] = useState("1,465");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setInvited(getRandomNumber(100, 500) + " people");
+      setBonus(getRandomNumber(1000, 5000));
+    }, 3000); // Change data every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const getRandomNumber = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
   return (
     <Box
       color="rgba(0, 0, 0, 0.87)"
@@ -36,16 +53,21 @@ const SatisfactionCard = () => {
             </Box>
             <Box>
               <Box margin={3}>
-                <MiniInfoCards title="Invited" people="145 people" />
+                <MiniInfoCards title="Invited" people={invited} />
               </Box>
               <Box margin={3}>
-                <MiniInfoCards title="Bonus" people="1,465" />
+                <MiniInfoCards title="Bonus" people={bonus} />
               </Box>
             </Box>
           </Box>
         </GridItem>
         <GridItem>
-          <Box display="flex" justifyContent="center" alignItems={"center"}  marginTop={{ base: 0, lg: 20 }}>
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            marginTop={{ base: 0, lg: 20 }}
+          >
             <CircularProgresss
               color="green"
               autoChangeProgress={false}

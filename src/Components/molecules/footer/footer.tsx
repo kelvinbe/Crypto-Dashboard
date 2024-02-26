@@ -17,7 +17,7 @@ const Footer = () => {
         </Text>
       </GridItem>
       <GridItem>
-        <Text textAlign={{ base: 'center', md: 'right' }}>Crypto dashboards</Text>
+        <Text color={'white'} textAlign={{ base: 'center', md: 'right' }}>Crypto dashboards</Text>
       </GridItem>
     </Grid>
   );

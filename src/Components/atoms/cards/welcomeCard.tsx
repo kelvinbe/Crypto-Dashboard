@@ -19,6 +19,7 @@ const WelcomeCard = (props: IWelcomeCard) => {
       flexDirection="column"
       backdropFilter="blur(120px)"
       position="relative"
+      width={'100%'}
       minWidth="0px"
       overflowWrap="break-word"
       boxShadow="rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem"
@@ -46,7 +47,7 @@ const WelcomeCard = (props: IWelcomeCard) => {
             <Text color={'#455ba3'}>Glad to see you again!</Text>
         </Box>
         <Box>
-            <Text color={'#455ba3'}>Ask me anything</Text>
+            <Text color={'#455ba3'}>Crypto data is streaming in</Text>
         </Box>
       </Flex>
     </Box>
