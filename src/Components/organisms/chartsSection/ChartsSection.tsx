@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Flex, Grid, GridItem } from '@chakra-ui/react';
+import { Flex, Grid, GridItem, useMediaQuery } from '@chakra-ui/react';
 import ChartCard from '@/Components/atoms/cards/chartCard';
 import ActiveUsersCard from '@/Components/atoms/cards/activeUsersCard';
 import { FaWallet } from 'react-icons/fa';
@@ -17,6 +17,7 @@ const initialUsersValues = [
 
 const ChartsSection = () => {
   const [usersValues, setUsersValues] = useState(initialUsersValues);
+  const [isSmallScreen] = useMediaQuery('(max-width: 480px)');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,7 +39,7 @@ const ChartsSection = () => {
       <Grid
         templateColumns={{ base: '1fr', md: '1fr 1fr' }} // Responsive grid layout
         gap={6}
-        p={2}
+        p={isSmallScreen ? 0 : 2}
       >
         <GridItem colSpan={{ base: 1, md: 1 }}>
           <ChartCard percentage="+5%" />

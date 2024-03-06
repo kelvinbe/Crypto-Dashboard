@@ -37,8 +37,7 @@ const ActiveUsersCard = (props: IChartCard) => {
       borderStyle="solid"
       borderColor="rgba(0, 0, 0, 0.125)"
       borderRadius="1.25rem"
-      width="100%" // Set width to full on all screen sizes
-      maxWidth={{ base: "100%", md: "100%" }} // Limit maximum width on medium screens
+      width={{base: '400px', md: "500px" }} // Limit maximum width on medium screens
       marginX="auto" // Center the card horizontally
       marginTop={{ base: "0", md: "0" }} // Add margin on top only on small screens
       marginBottom={{ base: "5", md: "0" }} // Add margin on bottom only on small screens

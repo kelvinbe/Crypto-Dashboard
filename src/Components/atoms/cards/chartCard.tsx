@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { Box, Text, Grid } from '@chakra-ui/react';
+import { Box, Text, Grid, useMediaQuery } from '@chakra-ui/react';
 import LineChart from '@/Components/molecules/charts/LineChart';
 
 interface IChartCard {
@@ -11,6 +11,7 @@ interface IChartCard {
 const ChartCard = (props: IChartCard) => {
     const { percentage } = props
     const percentageColor = percentage[0] === '+' ? '#00FF00' : '#FF0000';
+    const [isSmallScreen] = useMediaQuery('(max-width: 480px)');
 
     return (
         <Grid
@@ -30,6 +31,7 @@ const ChartCard = (props: IChartCard) => {
             borderStyle="solid"
             borderColor="rgba(0, 0, 0, 0.125)"
             height={'320px'}
+            padding={isSmallScreen ? 0 : 10}
         >
             <Box display={'flex'} flexDirection={'column'} justifyContent={'center'}>
                 <Text fontSize={16} color={'white'}>Sales Overview</Text>
