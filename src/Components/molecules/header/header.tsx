@@ -28,10 +28,10 @@ const Header = () => {
       justifyContent={'space-between'}
       marginBottom={10}
     >
-      <Link href="#" passHref>
+      <Link href="/" passHref>
         <ChakraLink mr={4}>Home</ChakraLink>
       </Link>
-      <Link href="#" passHref>
+      <Link href="/about" passHref>
         <ChakraLink mr={4}>About Us</ChakraLink>
       </Link>
       <Link href="#" passHref>
