@@ -43,7 +43,7 @@ const MissionCard = (props: ImissionCard) => {
       <Grid templateColumns={{ base: "1fr", md: "2fr 1fr" }} gap={4}>
         <GridItem>
           <Heading textColor={'white'} fontSize={36} fontWeight={700}  marginBottom={5}>{title}</Heading>
-          <Text textColor={'white'} fontWeight={100} fontSize={25}>
+          <Text textColor={'white'} fontWeight={100} fontSize={17}>
             {info}
           </Text>
         </GridItem>

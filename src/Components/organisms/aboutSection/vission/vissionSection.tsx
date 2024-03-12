@@ -6,7 +6,7 @@ import { data } from '@/app/about/data'
 const VissionSection = () => {
   return (
     <Box>
-        <VissionCard title='Our Vission' info={data.vision} aos="fade-up" />
+        <VissionCard title='Our Vision' info={data.vision} aos="fade-up" />
   </Box>
   )
 }

@@ -16,9 +16,6 @@ const VissionCard = (props: IVissionCard) => {
 
     const {info, title, aos} = props
     const [isSmallScreen] = useMediaQuery('(max-width: 480px)');
-
-    
-
     return (
     <Box
     data-aos={aos}
@@ -48,18 +45,17 @@ const VissionCard = (props: IVissionCard) => {
     m={20}
     >
     <Flex 
-
     flexDirection={isSmallScreen ? "column" : 'row'}
     >
         <Box width={'100%'}>
             <Heading color='white' fontSize={36} fontWeight={700} >
                 {title}
             </Heading>
-            <Text color={'white'}>
+            <Text  textColor={'white'} fontWeight={100} fontSize={17} color={'white'}>
                 {info}
             </Text>
         </Box>
-        <Box width={'100%'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+        <Box width={730} display={'flex'} justifyContent={'center'} alignItems={'center'}>
             <Image src='/crypto.gif' width={500} height={200} alt='crypto-img' />
         </Box>
     </Flex>

@@ -7,6 +7,8 @@ import MissionCard from '@/Components/atoms/about-cards/missionCards';
 import { data } from './data';
 import MissionSection from '@/Components/organisms/aboutSection/mission/missionSection';
 import VissionSection from '@/Components/organisms/aboutSection/vission/vissionSection';
+import PeopleCards from '@/Components/organisms/aboutSection/team/team';
+import ContactForm from '@/Components/organisms/aboutSection/contact/contact';
 
 const Page = () => {
   useEffect(() => {
@@ -24,24 +26,8 @@ const Page = () => {
       </Heading>
       <MissionSection />
       <VissionSection />
-      <Box data-aos="fade-up">
-        <Heading as="h2" size="lg" mb={4}>
-          Our Team
-        </Heading>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          fringilla magna non risus fermentum, quis tincidunt nunc ultrices.
-        </Text>
-      </Box>
-      <Box data-aos="fade-up">
-        <Heading as="h2" size="lg" mb={4}>
-          Contact Us
-        </Heading>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          fringilla magna non risus fermentum, quis tincidunt nunc ultrices.
-        </Text>
-      </Box>
+    <PeopleCards />
+    <ContactForm />
     </Container>
   );
 };

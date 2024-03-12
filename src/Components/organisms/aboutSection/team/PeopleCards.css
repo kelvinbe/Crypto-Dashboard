@@ -1,0 +1,32 @@
+.people-cards-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.people-card {
+  width: 200px;
+  margin-right: 220px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideRight 15s linear infinite;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.person-details {
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  border-radius: 50%;
+}
